@@ -88,6 +88,21 @@ You can configure a custom filename template for your file using the query param
 |**`[hash]`**|`{String}`|`md5`|The hash of the content, hashes below for more info|
 |**`[N]`**|`{Number}`|``|The `n-th` match obtained from matching the current file name against the query param `regExp`|
 
+
+##### `placholders - regExp`
+
+```js
+{
+      test:  /\.(svg|png|gif|jpg|jpg)$/,
+      loader: 'file-loader',
+      options:{
+        regExp: '^'+ __dirname + '/fe/(.*)$',
+        name: './[1]',
+      }
+}
+```
+
+
 #### `hashes`
 
 `[<hashType>:hash:<digestType>:<length>]` optionally you can configure
